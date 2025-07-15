@@ -6,12 +6,10 @@ macOS: Tested successfully
 Windows: Not tested
 """
 
-import os
 import time
 import requests
 import pyautogui
 import subprocess
-import json
 import platform
 from pathlib import Path
 
@@ -57,6 +55,7 @@ class DesktopDataEntryBot:
         
         # Create formatted blog post content
         content = f"""BLOG POST #{post['id']}
+
 
 TITLE: {title}
 
