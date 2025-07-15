@@ -1,10 +1,10 @@
-# TJM Desktop Data Entry Bot
+# Desktop Data Entry Bot
 
 > **⚠️ IMPORTANT NOTE**: This script has been tested successfully on **macOS only**. It has not been tested on Windows or Linux systems.
 
 ## Overview
 
-The TJM Desktop Data Entry Bot is an automated solution that fetches blog posts from the JSONPlaceholder API and creates formatted text files using desktop applications (TextEdit on macOS, Notepad on Windows). The bot processes 10 blog posts and saves them as individual `.txt` files in a `tjm-project` directory on your desktop.
+The Desktop Data Entry Bot is an automated solution that fetches blog posts from the JSONPlaceholder API and creates formatted text files using desktop applications (TextEdit on macOS, Notepad on Windows). The bot processes 10 blog posts and saves them as individual `.txt` files in a `tjm-project` directory on your desktop.
 
 
 ## Prerequisites
@@ -82,7 +82,7 @@ pip install pyautogui requests
 
 #### Expected Output:
 ```
-🤖 TJM Desktop Automation Bot Starting...
+🤖 Desktop Automation Bot Starting...
 ⚠️  IMPORTANT: Move your mouse to the top-left corner to stop the bot at any time
 🍎 macOS detected - Using TextEdit
 💡 Note: TextEdit will be set to plain text mode automatically
@@ -92,7 +92,7 @@ pip install pyautogui requests
 3...
 2...
 1...
-🚀 Starting TJM Desktop Automation Bot...
+🚀 Starting Desktop Automation Bot...
 ============================================================
 🍎 Using TextEdit on macOS
 💡 Will use Cmd+S with .hold() method for save dialog
