@@ -16,7 +16,7 @@ from pathlib import Path
 class DesktopDataEntryBot:
     def __init__(self):
         # Configure PyAutoGUI for reliable automation
-        pyautogui.PAUSE = 0.1  # Very fast pause for speed
+        pyautogui.PAUSE = 0.01  
         pyautogui.FAILSAFE = True  # Move mouse to top-left corner to stop
         
         # Detect operating system for platform-specific behavior
