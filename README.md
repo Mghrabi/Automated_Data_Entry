@@ -6,6 +6,25 @@
 
 The Desktop Data Entry Bot is an automated solution that fetches blog posts from the JSONPlaceholder API and creates formatted text files using desktop applications (TextEdit on macOS, Notepad on Windows). The bot processes 10 blog posts and saves them as individual `.txt` files in a `tjm-project` directory on your desktop.
 
+## Project Structure
+
+```
+Automated_Data_Entry/
+├── desktop_bot.py              # Standard automation (PyAutoGUI only)
+├── enhanced_bot.py             # Professional automation (BotCity + PyAutoGUI)
+├── test_templates.py           # Template functionality tester
+├── requirements.txt            # Python dependencies
+├── README.md                   # Project documentation
+├── BOTCITY_SETUP.md           # BotCity usage guide
+├── templates/                  # Visual recognition templates
+│   ├── textedit_window.png     # TextEdit window detection
+│   ├── save_dialog.png         # Save dialog detection
+│   ├── save_button.png         # Save button detection
+│   ├── use_both_extensions.png # Extension dialog detection
+│   └── use_both_extensions_button.png # "Use Both" button
+└── automated_env/              # Virtual environment
+```
+
 
 ## Prerequisites
 
@@ -32,17 +51,28 @@ source automated_env/bin/activate
 automated_env\Scripts\activate
 ```
 
-### 2. Install Dependencies
+### 2. Install All Dependencies
 
 ```bash
-# Install required packages
-pip install pyautogui requests
+# Install all required packages for both standard and enhanced versions
+pip install -r requirements.txt
+
+# Optional: Test that BotCity templates are working correctly
+python test_templates.py
 ```
 
-**Required Dependencies:**
-- `pyautogui`: For desktop automation and keyboard/mouse control
-- `requests`: For API calls to fetch blog posts
-- We didn't install BotCity as it's not required for the project
+**Dependencies Explained:**
+- `pyautogui`: Fast desktop automation and keyboard/mouse control
+- `requests`: API calls to fetch blog posts
+- `botcity-framework-core`: Visual verification, OCR, and template matching (enhanced version)
+- `botcity-framework-base`: Image processing and computer vision capabilities (enhanced version)
+
+**Templates Included:**
+- `textedit_window.png`: Detects TextEdit application window
+- `save_dialog.png`: Identifies save dialog boxes
+- `save_button.png`: Locates save buttons
+- `use_both_extensions.png`: Handles macOS extension dialogs
+- `use_both_extensions_button.png`: Clicks "Use Both" button for file extensions
 
 
 ## Usage
@@ -56,10 +86,29 @@ pip install pyautogui requests
    automated_env\Scripts\activate     # Windows
    ```
 
-2. **Run the desktop bot**:
+2. **Choose your bot version**:
    ```bash
+   # Standard version (PyAutoGUI only) - Fast and simple
    python desktop_bot.py
+   
+   # Enhanced version (BotCity + PyAutoGUI) - Professional with visual verification
+   python enhanced_bot.py
+   
+   # Optional: Test template functionality first
+   python test_templates.py
    ```
+
+### Version Differences
+
+| Feature | Standard (`desktop_bot.py`) | Enhanced (`enhanced_bot.py`) |
+|---------|----------------------------|------------------------------|
+| **Speed** | ⚡ Ultra-fast typing | ⚡ Fast typing + verification |
+| **Reliability** | ✅ Basic error handling | 🛡️ Multi-layer error handling |
+| **UI Detection** | ❌ None | ✅ Template matching + OCR |
+| **Evidence Collection** | ❌ None | 📸 Screenshots at each step |
+| **Extension Dialogs** | ⚠️ Manual handling | ✅ Automatic detection & handling |
+| **Dependencies** | 📦 2 packages | 📦 4 packages |
+| **Use Case** | Quick demos | Production-ready automation |
 
 3. **Follow the on-screen instructions**:
    - The bot will detect your operating system
